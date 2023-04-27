@@ -23,6 +23,8 @@ public class Order {
 
     private String payment;
 
+    private boolean status;
+
     @ManyToOne
     @JoinColumn(name = "clients_id")
     private Client client;

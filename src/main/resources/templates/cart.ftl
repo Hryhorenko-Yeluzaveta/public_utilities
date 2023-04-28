@@ -35,11 +35,6 @@
 
     <p> Total value: <a> ${totelEl} </a> ₴ </p>
 
-    <p></p>
-    <h2>go to Form Order</h2>
-    <form action="/login" method="get">
-        <button type="submit"> go to Auth </button>
-    </form>
 
     <p></p>
 </@c.pages>

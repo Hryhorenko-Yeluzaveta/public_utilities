@@ -14,14 +14,14 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public boolean getLogicByUsernameAndPassword(String username, String pass) {
-        boolean logic = false;
+    public boolean getLoginByUsernameAndPassword(String username, String pass) {
+        boolean login = false;
 
         if(!userRepository.findAllByUsernameAndPassword(username, pass).isEmpty()) {
-            logic = true;
+            login = true;
         }
 
-        return logic;
+        return login;
     }
 
     public User getUserByUsernameAndPassword (String username, String pass) {

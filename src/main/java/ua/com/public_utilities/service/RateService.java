@@ -19,7 +19,7 @@ public class RateService {
         this.rateRepository = rateRepository;
     }
 
-    @Cacheable(cacheNames = "routes", key = "#category.getId()")
+    @Cacheable(cacheNames = "rates", key = "#category.getId()")
     public List<Rate> getRatesByCategory(Category category){
         return rateRepository.findAllByCategories(category);
     }

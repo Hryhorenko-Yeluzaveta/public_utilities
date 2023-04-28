@@ -27,40 +27,40 @@
 
 <#--    <p> Total value: <a> ${totalValue} </a></p>-->
 
-    <h2>Client</h2>
+<#--    <h2>Client</h2>-->
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>firstName</th>
-            <th>lastName</th>
-            <th>username</th>
-            <th>phone</th>
-            <th>email</th>
-            <th>address</th>
-            <th>payment</th>
-        </tr>
-        </thead>
-        <tbody>
-        <form action="/order" method="post">
-            <tr>
+<#--    <table class="table">-->
+<#--        <thead>-->
+<#--        <tr>-->
+<#--            <th>firstName</th>-->
+<#--            <th>lastName</th>-->
+<#--            <th>username</th>-->
+<#--            <th>phone</th>-->
+<#--            <th>email</th>-->
+<#--            <th>address</th>-->
+<#--            <th>payment</th>-->
+<#--        </tr>-->
+<#--        </thead>-->
+<#--        <tbody>-->
+<#--        <form action="/order" method="post">-->
+<#--            <tr>-->
 
-                <td>${client.firstname}</td>
-                <td>${client.lastname}</td>
-                <td>${client.user.username}</td>
-                <td>${client.phone}</td>
-                <td>${client.email}</td>
-                <td>${client.address}</td>
-                <td>
-                    <select name="payment">
-                        <option value="cash" selected>Cash</option>
-                        <option value="card">Card</option>
-                    </select>
-                </td>
-                <td> <button type="submit">Add to DB</button> </td>
+<#--                <td>${client.firstname}</td>-->
+<#--                <td>${client.lastname}</td>-->
+<#--                <td>${client.user.username}</td>-->
+<#--                <td>${client.phone}</td>-->
+<#--                <td>${client.email}</td>-->
+<#--                <td>${client.address}</td>-->
+<#--                <td>-->
+<#--                    <select name="payment">-->
+<#--                        <option value="cash" selected>Cash</option>-->
+<#--                        <option value="card">Card</option>-->
+<#--                    </select>-->
+<#--                </td>-->
+<#--                <td> <button type="submit">Add to DB</button> </td>-->
 
-            </tr>
-        </form>
-        </tbody>
+<#--            </tr>-->
+<#--        </form>-->
+<#--        </tbody>-->
     </table>
 </@c.pages>

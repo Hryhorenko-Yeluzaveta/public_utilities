@@ -93,8 +93,4 @@ public class RateController {
         return "redirect:/cart";
     }
 
-    @GetMapping("/login")
-    public String getPageLogin() {
-        return "login";
-    }
 }

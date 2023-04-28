@@ -37,61 +37,8 @@ public class UserController {
     }
 
 
-    @PostMapping("/login")
-    public String getPageOrder(@RequestParam(name = "username") String users,
-                               @RequestParam(name = "password") String password,
-                               HttpServletRequest request){
-
-        if(userService.getLogicByUsernameAndPassword(users, password)){
-
-            User users1 = userService.getUserByUsernameAndPassword(users, password);
-            HttpSession session = request.getSession();
-
-            session.setAttribute("user", users1);
-
-            return "redirect:/order";
-        } else {
-            return "redirect:/registration";
-        }
-
-    }
 
 
-    @GetMapping("/registration")
-    public String getPageRegistration() {
-        return "registration";
-    }
-
-    @PostMapping("/registration")
-    public String saveNewUser(@RequestParam(name = "firstname") String firstname,
-                              @RequestParam(name = "lastname") String lastname,
-                              @RequestParam(name = "phone") String phone,
-                              @RequestParam(name = "email") String email,
-                              @RequestParam(name = "address") String address,
-                              @RequestParam(name = "username") String username,
-                              @RequestParam(name = "password") String password,
-                              HttpServletRequest request) {
-
-        HttpSession session = request.getSession();
-
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
-
-        userRepository.save(user);
-
-        Client client = new Client();
-        client.setFirstname(firstname);
-        client.setLastname(lastname);
-        client.setPhone(phone);
-        client.setEmail(email);
-        client.setAddress(address);
-        client.setUser(user);
-
-        clientRepository.save(client);
-
-        return "login";
-    }
 
     @GetMapping("/order")
     public String getPageOrder(HttpServletRequest request, Model model){

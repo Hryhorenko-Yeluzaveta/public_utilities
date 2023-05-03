@@ -1,18 +1,17 @@
-package ua.com.public_utilities_admin.service;
+package ua.com.public_utilities.service;
 
-import com.mysql.cj.xdevapi.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import ua.com.public_utilities_admin.entity.Customer;
-import ua.com.public_utilities_admin.entity.Role;
-import ua.com.public_utilities_admin.entity.User;
-import ua.com.public_utilities_admin.repository.CustomerRepository;
-import ua.com.public_utilities_admin.repository.RoleRepository;
-import ua.com.public_utilities_admin.repository.UserRepository;
+import ua.com.public_utilities.entity.Client;
+import ua.com.public_utilities.entity.Role;
+import ua.com.public_utilities.entity.User;
+import ua.com.public_utilities.repository.ClientRepository;
+import ua.com.public_utilities.repository.RoleRepository;
+import ua.com.public_utilities.repository.UserRepository;
 
 import java.util.Collections;
 import java.util.List;
@@ -21,13 +20,12 @@ import java.util.List;
 public class UserManagerService implements UserDetailsService {
 
     private final UserRepository userRepository;
-    private final CustomerRepository customerRepository;
+    private final ClientRepository clientRepository;
     private final RoleRepository roleRepository;
-
     @Autowired
-    public UserManagerService(UserRepository userRepository, CustomerRepository customerRepository, RoleRepository roleRepository) {
+    public UserManagerService(UserRepository userRepository, ClientRepository clientRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
-        this.customerRepository = customerRepository;
+        this.clientRepository = clientRepository;
         this.roleRepository = roleRepository;
     }
 
@@ -55,12 +53,12 @@ public class UserManagerService implements UserDetailsService {
     }
 
 
-    public List<Customer> getCustomerList() {
-        return customerRepository.findAll();
+    public List<Client> getClientList() {
+        return clientRepository.findAll();
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public User loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User user1 = userRepository.findByUsername(username);
 

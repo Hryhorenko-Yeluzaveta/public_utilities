@@ -16,10 +16,14 @@
         </div>
 
         <div class="row">
+            <div class="col-12 col-md-3">
+                <#include "left.ftl">
+            </div>
             <div class="col-12 col-md-9">
                 <#nested>
             </div>
         </div>
+
 
         <div class="row align-items-end">
             <div class="col">

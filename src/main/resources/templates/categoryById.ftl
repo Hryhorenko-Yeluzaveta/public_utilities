@@ -1,4 +1,4 @@
-<#import "parts/templadmin.ftl" as p>
+<#import "templ/templ.ftl" as p>
 <@p.pages>
 
     <#if category??>

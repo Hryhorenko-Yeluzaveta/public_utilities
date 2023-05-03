@@ -1,15 +1,42 @@
 package ua.com.public_utilities.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import ua.com.public_utilities.service.CategoryManagerService;
 
 @Controller
 public class HomeController {
-    @GetMapping("/")
-    public String getPageHome(Model model) {
+    private  final CategoryManagerService categoryManagerService;
 
-        model.addAttribute("hello ", "Hello world");
-        return "home";
+    @Autowired
+    public HomeController(CategoryManagerService categoryManagerService) {
+        this.categoryManagerService = categoryManagerService;
+    }
+
+
+    @GetMapping("/")
+    public String getHome(){
+        return "index";
+    }
+
+    @GetMapping("/rates")
+    public String getRateAdmin(){
+        return "rateAdminPage";
+    }
+
+    @GetMapping("/categories")
+    public String getCategoryAdmin(){
+        return "categoryAdminPage";
+    }
+
+    @GetMapping("/orders")
+    public String getOrdersAdmin(){
+        return "orders";
+    }
+
+    @GetMapping("/customers")
+    public String getCustomersAdmin(){
+        return "customers";
     }
 }

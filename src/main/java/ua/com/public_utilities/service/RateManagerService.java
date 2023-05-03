@@ -1,10 +1,10 @@
-package ua.com.public_utilities_admin.service;
+package ua.com.public_utilities.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.com.public_utilities_admin.entity.Category;
-import ua.com.public_utilities_admin.entity.Rate;
-import ua.com.public_utilities_admin.repository.RateRepository;
+import ua.com.public_utilities.entity.Category;
+import ua.com.public_utilities.entity.Rate;
+import ua.com.public_utilities.repository.RateRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -23,7 +23,7 @@ public class RateManagerService {
 
         Rate rate = new Rate();
         rate.setName(name);
-        rate.setImage(image);
+        rate.setImages(image);
         rate.setPrice(price);
         rate.setCategories(category);
 
@@ -34,7 +34,7 @@ public class RateManagerService {
         Rate rate = new Rate();
         rate.setId(id);
         rate.setName(name);
-        rate.setImage(image);
+        rate.setImages(image);
         rate.setPrice(price);
         rate.setCategories(category);
 

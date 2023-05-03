@@ -1,4 +1,4 @@
-<#import "parts/templadmin.ftl" as p>
+<#import "templ/templ.ftl" as p>
 <@p.pages>
     <h1>Rates</h1>
     <p></p>
@@ -16,8 +16,8 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="image">Image</label><br>
-                    <input type="text" name="image" id="image" placeholder="link"><br>
+                <td><label for="images">Image</label><br>
+                    <input type="text" name="images" id="images" placeholder="link"><br>
                 </td>
             </tr>
 
@@ -67,7 +67,7 @@
             <tr>
                 <td>Id</td>
                 <td>Name</td>
-                <td>Image</td>
+                <td>Images</td>
                 <td>Price</td>
                 <td>Category</td>
             </tr>
@@ -80,7 +80,7 @@
                     <tr>
                         <td>${rate.id}</td>
                         <td><a href="/ratemanager/${rate.id}"> ${rate.name} </a></td>
-                        <td>${rate.image}</td>
+                        <td>${rate.images}</td>
                         <td>${rate.price}</td>
                         <td>${rate.categories.name}</td>
                     </tr>
@@ -107,7 +107,7 @@
         <tr>
             <#--            <td>Id</td>-->
             <td>Name</td>
-            <td>Image</td>
+            <td>Images</td>
             <td>Price</td>
             <td>Category
             <td>Update</td>
@@ -128,7 +128,7 @@
                         <td>
                             <input type="text" name="name" value="${rate.name}">
                         </td>
-                        <td><input type="text" name="image" value="${rate.image}"></td>
+                        <td><input type="text" name="images" value="${rate.images}"></td>
                         <td><input type="text" name="price" value="${rate.price}"></td>
                         <td>
                             <select name="categoryId">

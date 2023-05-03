@@ -1,4 +1,4 @@
-<#import "parts/templadmin.ftl" as p>
+<#import "templ/templ.ftl" as p>
 <@p.pages>
 
     <#if customers??>
@@ -6,8 +6,8 @@
         <#list customers as customer>
             <ul>
                 <li>${customer.id}</li>
-                <li>${customer.firstName}</li>
-                <li>${customer.lastName}</li>
+                <li>${customer.firstname}</li>
+                <li>${customer.lastname}</li>
                 <li>Username : ${customer.user.username}</li>
                 <li>Password : ${customer.user.password}</li>
                 <li>${customer.email}</li>

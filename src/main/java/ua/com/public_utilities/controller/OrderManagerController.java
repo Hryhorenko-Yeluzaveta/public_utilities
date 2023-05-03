@@ -1,16 +1,14 @@
-package ua.com.public_utilities_admin.controller;
+package ua.com.public_utilities.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ua.com.public_utilities_admin.entity.Order;
-import ua.com.public_utilities_admin.service.OrderManagerService;
+import ua.com.public_utilities.entity.Order;
+import ua.com.public_utilities.service.OrderManagerService;
 
 @Controller
 public class OrderManagerController {

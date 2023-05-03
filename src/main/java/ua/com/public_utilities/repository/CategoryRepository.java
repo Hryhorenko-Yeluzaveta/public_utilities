@@ -6,4 +6,5 @@ import ua.com.public_utilities.entity.Category;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
+    Category findByName(String name);
 }

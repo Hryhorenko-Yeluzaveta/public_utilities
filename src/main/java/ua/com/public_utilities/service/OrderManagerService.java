@@ -1,8 +1,8 @@
-package ua.com.public_utilities_admin.service;
+package ua.com.public_utilities.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.com.public_utilities_admin.entity.Order;
-import ua.com.public_utilities_admin.repository.OrderRepository;
+import ua.com.public_utilities.entity.Order;
+import ua.com.public_utilities.repository.OrderRepository;
 
 import java.util.List;
 

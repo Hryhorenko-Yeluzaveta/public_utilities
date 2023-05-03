@@ -1,25 +1,39 @@
 package ua.com.public_utilities.entity;
+
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Set;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
+@EqualsAndHashCode
+@ToString
 
 @Entity
-@Table(name = "fix_roles")
-public class Role {
+@Table(name = "roles")
+public class Role implements GrantedAuthority {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
+    @Transient
     @ManyToMany(mappedBy = "roles")
-    private Set<User> userSet;
+    private Set<User> userset;
+
+    //    public Role() {}
+    public Role(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Override
+    public String getAuthority() {
+        return getName();
+    }
 }

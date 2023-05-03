@@ -21,7 +21,7 @@ public class Rate {
 
     private String name;
 
-    private double price;
+    private BigDecimal price;
 
     private String images;
 

@@ -3,6 +3,7 @@ package ua.com.public_utilities.bl;
 import lombok.*;
 import ua.com.public_utilities.entity.Rate;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Cart {
     List<ItemCart> cart;
 
 
-    private double totalValue;
+    private BigDecimal totalValue;
 
     public Cart() {
         cart = new ArrayList<>();
@@ -43,11 +44,11 @@ public class Cart {
         }
     }
 
-    public synchronized double getTotalVal(){
+    public synchronized BigDecimal getTotalVal(){
 
-        totalValue = 0;
+        totalValue = BigDecimal.valueOf(0);
         for (ItemCart el : cart) {
-            totalValue = el.getIndex() * el.getRate().getPrice();
+            totalValue = totalValue.add(el.getRate().getPrice().multiply(BigDecimal.valueOf(el.getIndex())));
         }
         return totalValue;
     }

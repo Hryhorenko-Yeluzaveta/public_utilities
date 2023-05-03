@@ -8,4 +8,5 @@ import ua.com.public_utilities.entity.User;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
     Client findByUser (User user);
+    Client getClientById (Long id);
 }

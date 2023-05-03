@@ -1,4 +1,4 @@
-package ua.com.public_utilities_admin.controller;
+package ua.com.public_utilities.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,10 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import ua.com.public_utilities_admin.entity.Customer;
-import ua.com.public_utilities_admin.entity.User;
-import ua.com.public_utilities_admin.service.CustomerManagerService;
-import ua.com.public_utilities_admin.service.UserManagerService;
+import ua.com.public_utilities.entity.Client;
+import ua.com.public_utilities.entity.User;
+import ua.com.public_utilities.service.CustomerManagerService;
+import ua.com.public_utilities.service.UserManagerService;
 
 @Controller
 public class UserManagerController {
@@ -34,7 +34,7 @@ public class UserManagerController {
     public String getRegistrationPage(Model model){
 
         model.addAttribute("users", new User());
-        model.addAttribute("customer", new Customer());
+        model.addAttribute("customer", new Client());
 
         return "registration";
     }
@@ -43,7 +43,7 @@ public class UserManagerController {
     @PostMapping("/registration")
     public String saveNewCustomer(@Valid User users,
                                   BindingResult bindingResult,
-                                  @Valid Customer customer,
+                                  @Valid Client customer,
                                   BindingResult bindingResult1,
                                   Model model
     ){
@@ -76,7 +76,7 @@ public class UserManagerController {
     @GetMapping("/customermanager")
     public String getCustomerList(Model model){
 
-        model.addAttribute("customers",  userService.getCustomerList());
+        model.addAttribute("customers",  userService.getClientList());
 
         return "customerAdmin";
     }

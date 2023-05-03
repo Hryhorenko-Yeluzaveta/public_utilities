@@ -10,4 +10,5 @@ import java.util.List;
 public interface RateRepository extends JpaRepository<Rate, Long> {
     List<Rate> findAllByCategories(Category category);
 
+    Rate findByName(String name);
 }

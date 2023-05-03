@@ -24,7 +24,7 @@
                                 <#--                                </div>-->
                                 <p></p>
 
-                                <label for="index">Index</label>
+                                <label for="index">Введіть свої показники: </label>
                                 <input type="index" id="index" name="index" placeholder="index">
 
                                 <p></p>

@@ -1,5 +1,5 @@
 <#import "/spring.ftl" as spring>
-<#import "parts/templadmin.ftl" as p>
+<#import "templ/templ.ftl" as p>
 
 <@p.pages>
     <h1> Registration </h1>
@@ -19,11 +19,11 @@
         <@spring.bind "customer"/>
 
         <label>First Name</label><br>
-        <@spring.formInput "customer.firstName"/>
+        <@spring.formInput "customer.firstname"/>
         <@spring.showErrors "<br>"/><br>
 
         <label>Last Name</label><br>
-        <@spring.formInput "customer.lastName"/>
+        <@spring.formInput "customer.lastname"/>
         <@spring.showErrors "<br>"/><br>
 
         <label>Phone</label><br>

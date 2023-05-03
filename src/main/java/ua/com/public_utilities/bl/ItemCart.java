@@ -11,4 +11,5 @@ import ua.com.public_utilities.entity.Rate;
 public class ItemCart {
     private Rate rate;
     private double index;
+
 }

@@ -1,8 +1,8 @@
-package ua.com.public_utilities_admin.service;
+package ua.com.public_utilities.service;
 
 import org.springframework.stereotype.Service;
-import ua.com.public_utilities_admin.entity.Category;
-import ua.com.public_utilities_admin.repository.CategoryRepository;
+import ua.com.public_utilities.entity.Category;
+import ua.com.public_utilities.repository.CategoryRepository;
 
 import java.util.List;
 import java.util.Optional;
